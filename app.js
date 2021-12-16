@@ -22,6 +22,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
+//MongoDB connection
+const mongoDb = require('./mongodb');
 
 //Start Server
 server.listen(port, () => {

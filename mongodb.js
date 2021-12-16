@@ -8,13 +8,14 @@ let _db;
 module.exports = {
 
     connectToServer: function (callback) {
-        MongoClient.connect(CONNECTION_URL, function (err, client) {
+        MongoClient.connect(CONNECTION_URL,
+            function (err, client) {
 
-            _db = client.db(DATABASE_NAME);
-            console.log('Connected to database: ' + DATABASE_NAME);
-            return callback(err);
+                _db = client.db(DATABASE_NAME);
+                console.log('Connected to database:' + DATABASE_NAME);
+                return callback(err);
 
-        });
+            });
     },
 
     getDb: function () {
